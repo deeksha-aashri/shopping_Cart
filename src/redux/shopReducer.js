@@ -49,7 +49,7 @@ const shopReducer = (state=initialState, action) => {
         cart: inCart ?
           state.cart.map((product) => product.id == action.payload.id ? { ...product, qty: product.qty + 1 } : product)//here colon means if the item we are adding now is not the same as what is presnt in cart so add the already present item at least.
           :
-          [...state.cart,{...item,qty:1}] //this works when incart is false so we add our item with qty==1 in front of state.cart
+          [...state.cart,{...item,qty:1}] //this works when incart is false so we add our item with qty=1 in front of state.cart
       }
       
     case actionTypes.LOAD_CURRENT_ITEM:
